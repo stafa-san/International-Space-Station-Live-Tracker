@@ -78,29 +78,6 @@
 
         setInterval(getISS, 1000);
 
-        async function getCovid() {
-            const response = await fetch("https://covid-19-data.p.rapidapi.com/country/code?code=it", {
-	            "method": "GET",
-	            "headers": {
-		        "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
-		        "x-rapidapi-key": "a9c920e24emsh894b7d8d68b5731p166521jsn54a8d49b9b78"
-	            }
-            });
-            const covidData = await response.json();
-            const ccovidData = covidData[0];
-            const {country, code, confirmed, critical, deaths, lastChange, lastUpdate, latitude, longitude, recovered} = ccovidData
-
-            console.log(ccovidData);
-            console.log('Deaths :' + ccovidData.deaths);
-            console.log('Confirmed cases :' + ccovidData.confirmed);
-            console.log('Recovered patients :' + ccovidData.recovered);
-            console.log('Country :' + ccovidData.country);
-        
-        
-        }
-
-        getCovid();
-
     </script>
 </body>
 </html>
